@@ -337,7 +337,7 @@ void DrawDate(void)
     size_t inbytesleft, outbytesleft;
     iconv_t cd;
 
-    cd = iconv_open("ASCII//TRANSLIT", nl_langinfo(CODESET));
+    cd = iconv_open("CHAR", nl_langinfo(CODESET));
 
     inbuf = OrigBlitStr;
     outbuf = BlitStr;

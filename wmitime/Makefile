@@ -1,5 +1,5 @@
 LIBS   = -lXpm -lXext -lX11 -lm -ldockapp
-CFLAGS = -O2 -Wall
+CFLAGS = -O2 -Wall -march=native
 OBJS = wmitime.o
 INSTALL = install
 PREFIX = /usr/local
