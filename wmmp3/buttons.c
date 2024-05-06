@@ -13,6 +13,11 @@
 #include "wmgeneral.h"
 #include "buttons.h"
 
+extern Display *display;
+extern Window Root, iconwin, win;
+extern XpmIcon wmgen;
+extern XpmIcon wmfont;
+
 struct coord {
 	int x;
 	int y;

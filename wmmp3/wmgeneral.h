@@ -37,17 +37,8 @@ typedef struct {
 	XpmAttributes attributes;
 } XpmIcon;
 
-/*******************/
- /* Global variable */
-/*******************/
-
-Display *display;
-Window Root, iconwin, win;
-XpmIcon wmgen;
-XpmIcon wmfont;
-
 /***********************/
- /* Function Prototypes */
+/* Function Prototypes */
 /***********************/
 
 void AddMouseRegion(int index, int left, int top, int right, int bottom);

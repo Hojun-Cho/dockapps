@@ -54,6 +54,11 @@
 #include "wmgeneral.h"
 #include "charset.xpm"
 
+Display *display;
+Window Root, iconwin, win;
+XpmIcon wmgen;
+XpmIcon wmfont;
+
 /*****************/
  /* X11 Variables */
 /*****************/

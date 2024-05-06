@@ -14,9 +14,17 @@
  * $Id: mpg123ctl.c,v 1.15 1999/10/12 04:41:20 pcrosby Exp $
  */
 
+#include <unistd.h>
+#include <unistd.h>
 #include <time.h>
 #include <ctype.h>
+#include "wmgeneral.h"
 #include "mpg123ctl.h"
+
+extern Display *display;
+extern Window Root, iconwin, win;
+extern XpmIcon wmgen;
+extern XpmIcon wmfont;
 
 #define MAXDIRS 100
 #define MAX_TITLE_LEN 9
@@ -158,8 +166,7 @@ void signal_play()
 void play(char *song_name)
 {
     if ((play_pid = fork()) == 0) {
-	execl(mpg123_cmd, mpg123_cmd, "-q",
-	      song_name, 0);
+	execl(mpg123_cmd, mpg123_cmd, "-q", song_name, (char *)0);
 	_exit(1);
     }
 }

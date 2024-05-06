@@ -11,8 +11,23 @@
  * $Id: main.c,v 1.11 1999/10/08 22:21:32 pcrosby Exp $
  */
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <pwd.h>
+#include <sys/types.h>
+#include <errno.h>
+#include <unistd.h>
+
+#include "buttons.h"
+#include "wmgeneral.h"
+#include "mpg123ctl.h"
+#include "wmmp3.xpm"
+
+#define streq(s1, s2) \
+        (strcmp(s1, s2) == 0)
+
 #include <ctype.h>
-#include "main.h"
 
 #define B_STOP 0
 #define B_PLAY 1
@@ -30,6 +45,11 @@ void show_version();
 int check_options(int argc, char *argv[]);
 int handle_button_press(int x, int y);
 void handle_button_release(int i);
+
+extern Display *display;
+extern Window Root, iconwin, win;
+extern XpmIcon wmgen;
+extern XpmIcon wmfont;
 
 struct coord {
     int x;

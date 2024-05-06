@@ -2,6 +2,10 @@
 #include <string.h>
 #include "song_hash.h"
 
+/*extern Window Root, iconwin, win;*/
+/*extern XpmIcon wmgen;*/
+/*extern XpmIcon wmfont;*/
+
 #define HASH_TABLE_SIZE 11
 
 struct hash_elt *Table[HASH_TABLE_SIZE];
